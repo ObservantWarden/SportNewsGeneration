@@ -1,5 +1,4 @@
 import logging
-import re
 
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
@@ -21,7 +20,7 @@ class TelegramController:
         self.__wait_line = "Подождите, сейчас я соображу что-нибудь умное..."
         self.__error_line = "У нас ошибочка! Обратитесь ко мне через время, когда меня подлечат"
         self.generator = generator
-        self.application = ApplicationBuilder().token('5809969387:AAE1dA28rpi2nxYe2sq0721CmPJXMfe482g').build()
+        self.application = ApplicationBuilder().token('SECURED TOKEN').build()
         start_handler = CommandHandler('start', self.start)
 
         generate_answer_handler = MessageHandler(filters.TEXT & ~filters.COMMAND, self.reply)
